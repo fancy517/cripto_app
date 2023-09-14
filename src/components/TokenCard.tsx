@@ -11,7 +11,7 @@ export class TokenCard extends Component<TokenProps> {
   render() {
     return (
       <View>
-        {/* <Text>{this.props.token.name}</Text> */}
+        <Text>{this.props.token.name}</Text>
       </View>
     );
   }
