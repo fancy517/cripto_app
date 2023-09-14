@@ -1,15 +1,20 @@
-type token = {
-    "coins_count":number,
-    "active_markets":number,
-    "total_mcap":number,
-    "total_volume":number,
-    "btc_d":string,
-    "eth_d":string,
-    "mcap_change":string,
-    "volume_change":string,
-    "avg_change_percent":number,
-    "volume_ath":number,
-    "mcap_ath":number
-}
+type Token = {
+  csupply: string;
+  id: string;
+  market_cap_usd: string;
+  msupply: string;
+  name: string;
+  nameid: string;
+  percent_change_1h: string;
+  percent_change_24h: string;
+  percent_change_7d: string;
+  price_btc: string;
+  price_usd: string;
+  rank: number;
+  symbol: string;
+  tsupply: string;
+  volume24: number;
+  volume24a: number;
+};
 
-export default token;
+export default Token;
