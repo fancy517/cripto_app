@@ -23,7 +23,6 @@ export class ListOfCards extends Component {
     const moreTokens = await this.state.criptoApi.getAllCriptoTickets(
       this.state.currentPage + 1
     );
-    console.log(this.state.listOfTokens);
     this.setState({
       ...this.state,
       listOfTokens: [...this.state.listOfTokens, ...moreTokens],

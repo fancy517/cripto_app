@@ -12,17 +12,11 @@ export default class StartPage extends Component<props> {
 
   render() {
     const { navigation, route } = this.props;
-    console.log(route);
 
     return (
       <>
         <TopBar />
         <View style={styles.container}>
-          <Button
-            onPress={() => navigation.navigate("TiketDetails", { ticketId: 0 })}
-          >
-            Ir a detalles
-          </Button>
           <ListOfCards />
         </View>
       </>

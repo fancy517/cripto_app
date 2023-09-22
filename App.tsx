@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { PaperProvider } from "react-native-paper";
 import StartPage from "./src/views/StartPage";
-import TiketDetails from "./src/views/TiketDetails";
+import TicketDetails from "./src/views/TicketDetails";
 import RootStack from "./src/helpers/root.stack";
 
 // const Stack = createNativeStackNavigator();
@@ -16,8 +16,8 @@ export default function App() {
             options={{ headerShown: false }}
           />
           <RootStack.Screen
-            component={TiketDetails}
-            name="TiketDetails"
+            component={TicketDetails}
+            name="TicketDetails"
             options={{ headerShown: false }}
           />
         </RootStack.Navigator>

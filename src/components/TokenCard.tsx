@@ -2,23 +2,33 @@ import React, { Component } from "react";
 import Token from "../types/Token";
 import { Avatar, Button, Card, Text } from "react-native-paper";
 import { StyleSheet } from "react-native";
-
+import { useNavigation } from "@react-navigation/native";
+import { RootStackParamsList } from "../types/StackParams";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 type TokenProps = {
   token: Token;
 };
 
-export class TokenCard extends Component<TokenProps> {
-  state = {};
-  render() {
-    return (
-      <Card style={style.cardContainer}>
-        <Card.Content>
-          <Text variant="titleLarge">{this.props.token.name}</Text>
-          <Text variant="titleMedium">${this.props.token.price_usd} USD</Text>
-        </Card.Content>
-      </Card>
-    );
-  }
+type TicketDetailsProps = NativeStackNavigationProp<
+  RootStackParamsList,
+  "TicketDetails"
+>;
+
+export default function TokenCard({ token }: TokenProps) {
+  const navigation = useNavigation<TicketDetailsProps>();
+  return (
+    <Card
+      style={style.cardContainer}
+      onPress={() => {
+        navigation.navigate("TicketDetails", { ticketId: token.id });
+      }}
+    >
+      <Card.Content>
+        <Text variant="titleLarge">{token.name}</Text>
+        <Text variant="titleMedium">${token.price_usd} USD</Text>
+      </Card.Content>
+    </Card>
+  );
 }
 
 const style = StyleSheet.create({
@@ -26,5 +36,3 @@ const style = StyleSheet.create({
     margin: 5,
   },
 });
-
-export default TokenCard;
