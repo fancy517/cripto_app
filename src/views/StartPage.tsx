@@ -1,20 +1,31 @@
 import { StyleSheet, Text, View } from "react-native";
 import React, { Component } from "react";
-
-import Api from "../api";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamsList } from "../types/StackParams";
 import ListOfCards from "../components/ListOfCards";
 import TopBar from "../components/TopBar";
+import { Button } from "react-native-paper";
 
 type props = NativeStackScreenProps<RootStackParamsList, "StartPage">;
 export default class StartPage extends Component<props> {
+  setNavigation = this.props.navigation.navigate;
+
   render() {
+    const { navigation, route } = this.props;
+    console.log(route);
+
     return (
-      <View style={styles.container}>
+      <>
         <TopBar />
-        <ListOfCards />
-      </View>
+        <View style={styles.container}>
+          <Button
+            onPress={() => navigation.navigate("TiketDetails", { ticketId: 0 })}
+          >
+            Ir a detalles
+          </Button>
+          <ListOfCards />
+        </View>
+      </>
     );
   }
 }
