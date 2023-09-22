@@ -19,6 +19,7 @@ export default function App() {
             component={TicketDetails}
             name="TicketDetails"
             options={{ headerShown: false }}
+            
           />
         </RootStack.Navigator>
       </PaperProvider>

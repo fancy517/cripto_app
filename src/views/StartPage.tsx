@@ -4,15 +4,10 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamsList } from "../types/StackParams";
 import ListOfCards from "../components/ListOfCards";
 import TopBar from "../components/TopBar";
-import { Button } from "react-native-paper";
 
 type props = NativeStackScreenProps<RootStackParamsList, "StartPage">;
 export default class StartPage extends Component<props> {
-  setNavigation = this.props.navigation.navigate;
-
   render() {
-    const { navigation, route } = this.props;
-
     return (
       <>
         <TopBar />
