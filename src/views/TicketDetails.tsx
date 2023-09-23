@@ -1,5 +1,5 @@
 import { Image, StyleSheet, View } from "react-native";
-import { Avatar, Card, IconButton } from "react-native-paper";
+import { Card } from "react-native-paper";
 import React, { Component } from "react";
 import { RootStackParamsList } from "../types/StackParams";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
@@ -28,8 +28,6 @@ export class TicketDetails extends Component<TicketDetailsProps> {
       const ticketData = await this.state.criptoApi.getCriptoDetails(
         this.props.route.params.ticketId
       );
-      console.log(ticketData);
-
       this.setState({ ...this.state, ticketData });
     })();
   }
@@ -44,19 +42,14 @@ export class TicketDetails extends Component<TicketDetailsProps> {
                 <Card.Title
                   title={this.state.ticketData.name}
                   titleVariant="headlineMedium"
-                  left={() => {
-                    console.log(
-                      `https://assets.coincap.io/assets/icons/${this.state.ticketData?.symbol.toLowerCase()}@2x.png`
-                    );
-                    return (
-                      <Image
-                        style={{ height: 40, width: 40 }}
-                        source={{
-                          uri: `https://assets.coincap.io/assets/icons/${this.state.ticketData?.symbol.toLowerCase()}@2x.png`,
-                        }}
-                      />
-                    );
-                  }}
+                  left={() => (
+                    <Image
+                      style={{ height: 40, width: 40 }}
+                      source={{
+                        uri: `https://assets.coincap.io/assets/icons/${this.state.ticketData?.symbol.toLowerCase()}@2x.png`,
+                      }}
+                    />
+                  )}
                 />
                 <Card.Content>
                   <RowOfText

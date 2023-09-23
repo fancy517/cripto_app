@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Token from "../types/Token";
 import { Avatar, Button, Card, Text } from "react-native-paper";
-import { StyleSheet } from "react-native";
+import { Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackParamsList } from "../types/StackParams";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -23,12 +23,29 @@ export default function TokenCard({ token }: TokenProps) {
       onPress={() => {
         navigation.navigate("TicketDetails", { ticketId: token.id });
       }}
+      mode="contained"
     >
+      <Card.Title
+        title={token.name}
+        titleVariant="headlineMedium"
+        left={() => (
+          <Image
+            style={{ height: 40, width: 40 }}
+            source={{
+              uri: `https://assets.coincap.io/assets/icons/${token.symbol.toLowerCase()}@2x.png`,
+            }}
+          />
+        )}
+      />
       <Card.Content>
-        <Text variant="titleLarge" style={style.title}>
+        {/* <Text variant="titleLarge" style={style.title}>
           {token.name}
-        </Text>
-        <RowOfText name="Price:" value={token.price_usd} />
+        </Text> */}
+        <RowOfText name="Price:" value={`$${token.price_usd} USD`} />
+        <RowOfText
+          name="Last 24 Hours:"
+          value={`${token.percent_change_24h}%`}
+        />
       </Card.Content>
     </Card>
   );
