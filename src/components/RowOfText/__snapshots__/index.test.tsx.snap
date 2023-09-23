@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RowOfText matches snapshot 1`] = `
+<View
+  style={
+    {
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "textAlign": "left",
+        },
+        {
+          "color": "rgba(28, 27, 31, 1)",
+          "writingDirection": "ltr",
+        },
+        [
+          {
+            "fontFamily": "System",
+            "fontSize": 16,
+            "fontWeight": "400",
+            "letterSpacing": 0.15,
+            "lineHeight": 24,
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    Name
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "textAlign": "left",
+        },
+        {
+          "color": "rgba(28, 27, 31, 1)",
+          "writingDirection": "ltr",
+        },
+        [
+          {
+            "fontFamily": "System",
+            "fontSize": 16,
+            "fontWeight": "400",
+            "letterSpacing": 0.15,
+            "lineHeight": 24,
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    Value
+  </Text>
+</View>
+`;
+
+exports[`RowOfText renders the component with name and value 1`] = `
+<View
+  style={
+    {
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "textAlign": "left",
+        },
+        {
+          "color": "rgba(28, 27, 31, 1)",
+          "writingDirection": "ltr",
+        },
+        [
+          {
+            "fontFamily": "System",
+            "fontSize": 16,
+            "fontWeight": "400",
+            "letterSpacing": 0.15,
+            "lineHeight": 24,
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    Name
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "textAlign": "left",
+        },
+        {
+          "color": "rgba(28, 27, 31, 1)",
+          "writingDirection": "ltr",
+        },
+        [
+          {
+            "fontFamily": "System",
+            "fontSize": 16,
+            "fontWeight": "400",
+            "letterSpacing": 0.15,
+            "lineHeight": 24,
+          },
+          undefined,
+        ],
+      ]
+    }
+  >
+    Value
+  </Text>
+</View>
+`;
