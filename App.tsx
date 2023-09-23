@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { PaperProvider } from "react-native-paper";
-import StartPage from "./src/views/StartPage";
+import ListOfTokens from "./src/views/ListOfTokens";
 import TicketDetails from "./src/views/TicketDetails";
 import RootStack from "./src/helpers/root.stack";
 
@@ -9,10 +9,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <PaperProvider>
-        <RootStack.Navigator initialRouteName="StartPage">
+        <RootStack.Navigator initialRouteName="ListOfTokens">
           <RootStack.Screen
-            name="StartPage"
-            component={StartPage}
+            name="ListOfTokens"
+            component={ListOfTokens}
             options={{ headerShown: false }}
           />
           <RootStack.Screen

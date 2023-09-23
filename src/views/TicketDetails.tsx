@@ -95,19 +95,22 @@ export class TicketDetails extends Component<TicketDetailsProps> {
                   <RowOfText
                     name="Total Token Supply:"
                     value={`${
-                      Math.round(Number(this.state.ticketData.csupply)) / 10
+                      Math.round(Number(this.state.ticketData.csupply) * 10) /
+                      10
                     }`}
                   />
                   <RowOfText
                     name="Volume last 24 Hours:"
                     value={`${
-                      Math.round(Number(this.state.ticketData.volume24)) / 10
+                      Math.round(Number(this.state.ticketData.volume24) * 10) /
+                      10
                     }`}
                   />
                   <RowOfText
                     name="Volume total:"
                     value={`${
-                      Math.round(Number(this.state.ticketData.volume24a)) / 10
+                      Math.round(Number(this.state.ticketData.volume24a) * 10) /
+                      10
                     }`}
                   />
                 </Card.Content>

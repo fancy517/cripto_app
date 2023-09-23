@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import React, { Component } from "react";
-import TokenCard from "./TokenCard";
-import Api from "../api";
+import TokenCard from "../TokenCard";
+import Api from "../../api";
 
 export class ListOfCards extends Component {
   state = {
