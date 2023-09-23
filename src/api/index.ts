@@ -10,10 +10,10 @@ export default class Api {
     return result.data;
   }
 
-  async getCriptoDetails(id: number): Promise<Token> {
+  async getCriptoDetails(id: string): Promise<Token> {
     const rawResult = await fetch(`${allUrls.ticket_details_url}?id=${id}`);
     const result = await rawResult.json();
-    return result.data;
+    return result[0];
   }
 
   async getCriptoMarket(id: number): Promise<Token[]> {

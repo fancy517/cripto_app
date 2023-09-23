@@ -1,18 +1,16 @@
 import { Appbar } from "react-native-paper";
-import React, { Component } from "react";
+import React from "react";
 
 type topBarProps = {
-    
-}
+  title?: string;
+};
 
-export default class TopBar extends Component {
-  render() {
-    return (
-      <Appbar.Header>
-        <Appbar.BackAction onPress={() => {}} />
-        <Appbar.Content title="Inicio" />
-        <Appbar.Action icon="magnify" onPress={() => {}} />
-      </Appbar.Header>
-    );
-  }
+export default function TopBar({ title = "start" }: topBarProps) {
+  return (
+    <Appbar.Header>
+      <Appbar.BackAction onPress={() => {}} />
+      <Appbar.Content title={title} />
+      <Appbar.Action icon="magnify" onPress={() => {}} />
+    </Appbar.Header>
+  );
 }
