@@ -1,6 +1,5 @@
-import React, { Component } from "react";
 import Token from "../../types/Token";
-import { Avatar, Button, Card, Text } from "react-native-paper";
+import {  Card } from "react-native-paper";
 import { Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackParamsList } from "../../types/StackParams";
@@ -38,9 +37,6 @@ export default function TokenCard({ token }: TokenProps) {
         )}
       />
       <Card.Content>
-        {/* <Text variant="titleLarge" style={style.title}>
-          {token.name}
-        </Text> */}
         <RowOfText name="Price:" value={`$${token.price_usd} USD`} />
         <RowOfText
           name="Last 24 Hours:"
