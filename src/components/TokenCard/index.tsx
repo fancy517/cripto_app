@@ -1,10 +1,11 @@
 import Token from "../../types/Token";
-import {  Card } from "react-native-paper";
+import { Card } from "react-native-paper";
 import { Image, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackParamsList } from "../../types/StackParams";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import RowOfText from "../RowOfText";
+
 type TokenProps = {
   token: Token;
 };

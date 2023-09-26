@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TokenCard Tests matches snapshot 1`] = `
+<View
+  collapsable={false}
+  style={
+    {
+      "backgroundColor": "rgba(231, 224, 236, 1)",
+      "borderRadius": 12,
+      "margin": 5,
+      "shadowColor": "#000",
+      "shadowOffset": {
+        "height": 0,
+        "width": 0,
+      },
+      "shadowOpacity": 0,
+      "shadowRadius": 0,
+    }
+  }
+  testID="card-container-outer-layer"
+>
+  <View
+    collapsable={false}
+    style={
+      {
+        "backgroundColor": "rgba(231, 224, 236, 1)",
+        "borderRadius": 12,
+        "elevation": 1,
+        "flex": undefined,
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 0,
+          "width": 0,
+        },
+        "shadowOpacity": 0,
+        "shadowRadius": 0,
+      }
+    }
+    testID="card-container"
+  >
+    <View
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "flexShrink": 1,
+          },
+          undefined,
+        ]
+      }
+      testID="card"
+    >
+      <View
+        style={
+          [
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "paddingLeft": 16,
+            },
+            {
+              "minHeight": 72,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "height": 40,
+                "justifyContent": "center",
+                "marginRight": 16,
+                "width": 40,
+              },
+              undefined,
+            ]
+          }
+        >
+          <Image
+            source={
+              {
+                "uri": "https://assets.coincap.io/assets/icons/@2x.png",
+              }
+            }
+            style={
+              {
+                "height": 40,
+                "width": 40,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            [
+              {
+                "flex": 1,
+                "flexDirection": "column",
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              [
+                {
+                  "textAlign": "left",
+                },
+                {
+                  "color": "rgba(28, 27, 31, 1)",
+                  "writingDirection": "ltr",
+                },
+                [
+                  {
+                    "fontFamily": "System",
+                    "fontSize": 28,
+                    "fontWeight": "400",
+                    "letterSpacing": 0,
+                    "lineHeight": 36,
+                  },
+                  [
+                    {
+                      "minHeight": 30,
+                      "paddingRight": 16,
+                    },
+                    {
+                      "marginBottom": 2,
+                    },
+                    undefined,
+                  ],
+                ],
+              ]
+            }
+          >
+            2
+          </Text>
+        </View>
+        <View />
+      </View>
+      <View
+        borderRadiusStyles={{}}
+        style={
+          [
+            {
+              "paddingHorizontal": 16,
+            },
+            {
+              "paddingBottom": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "textAlign": "left",
+                },
+                {
+                  "color": "rgba(28, 27, 31, 1)",
+                  "writingDirection": "ltr",
+                },
+                [
+                  {
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.15,
+                    "lineHeight": 24,
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            Price:
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "textAlign": "left",
+                },
+                {
+                  "color": "rgba(28, 27, 31, 1)",
+                  "writingDirection": "ltr",
+                },
+                [
+                  {
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.15,
+                    "lineHeight": 24,
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            $ USD
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "textAlign": "left",
+                },
+                {
+                  "color": "rgba(28, 27, 31, 1)",
+                  "writingDirection": "ltr",
+                },
+                [
+                  {
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.15,
+                    "lineHeight": 24,
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            Last 24 Hours:
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "textAlign": "left",
+                },
+                {
+                  "color": "rgba(28, 27, 31, 1)",
+                  "writingDirection": "ltr",
+                },
+                [
+                  {
+                    "fontFamily": "System",
+                    "fontSize": 16,
+                    "fontWeight": "400",
+                    "letterSpacing": 0.15,
+                    "lineHeight": 24,
+                  },
+                  undefined,
+                ],
+              ]
+            }
+          >
+            %
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
