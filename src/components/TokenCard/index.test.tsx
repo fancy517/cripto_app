@@ -23,12 +23,10 @@ const token = {
   volume24a: 1,
 };
 
-// const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 jest.useFakeTimers();
 
 describe("TokenCard Tests", () => {
   it("matches snapshot", async () => {
-    // await sleep(2000);
     let jsonElement = create(
       <NavigationContainer>
         <TokenCard token={token} />

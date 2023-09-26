@@ -10,8 +10,6 @@ describe("RowOfText", () => {
     const jsonElement = renderer
       .create(<RowOfText name={name} value={value} />)
       .toJSON();
-
-    console.log(jsonElement);
     expect(jsonElement).toMatchSnapshot();
   });
 
