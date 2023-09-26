@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "cripto_list",
-    "slug": "cripto_list",
+    "name": "crypto_list",
+    "slug": "crypto_list",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

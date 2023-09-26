@@ -1,6 +1,6 @@
-# CRIPTO LIST
+# CRYPTO LIST
 
-It is a simple app than allows you to consult all the major cripto coins avaliable in the market and all their details
+It is a simple app than allows you to consult all the major Cryptocurrencies avaliable in the market and all their details.
 
 This project was created using the last avaliable version of `expo` and using:
 * react-navigation
@@ -46,5 +46,5 @@ For an iOS device (only if you have a macOS computer with xCode) execute:
 2. Comment the line 28 of the same file.
 3. Uncomment the line 29 of the same file.
 4. Save changes.
-5. Execute the App/reload the running App
+5. Execute the App/reload the running App.
 
