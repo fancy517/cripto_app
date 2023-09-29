@@ -99,7 +99,7 @@ exports[`TokenCard Tests matches snapshot 1`] = `
           <Image
             source={
               {
-                "uri": "https://assets.coincap.io/assets/icons/@2x.png",
+                "uri": "https://assets.coincap.io/assets/icons/btc@2x.png",
               }
             }
             style={
@@ -154,7 +154,7 @@ exports[`TokenCard Tests matches snapshot 1`] = `
               ]
             }
           >
-            2
+            Bitcoin
           </Text>
         </View>
         <View />
@@ -229,7 +229,7 @@ exports[`TokenCard Tests matches snapshot 1`] = `
               ]
             }
           >
-            $ USD
+            $26132.55 USD
           </Text>
         </View>
         <View
@@ -288,7 +288,7 @@ exports[`TokenCard Tests matches snapshot 1`] = `
               ]
             }
           >
-            %
+            -0.43%
           </Text>
         </View>
       </View>

@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { RootStackParamsList } from "../types/StackParams";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import TopBar from "../components/TopBar";
-import Api from "../api";
+import Api from "../api/Api";
 import Token from "../types/Token";
 import RowOfText from "../components/RowOfText";
 
@@ -28,7 +28,7 @@ export class TicketDetails extends Component<TicketDetailsProps> {
       const ticketData = await this.state.criptoApi.getCriptoDetails(
         this.props.route.params.ticketId
       );
-      this.setState({ ...this.state, ticketData });
+      this.setState({ ...this.state, ticketData: ticketData[0] });
     })();
   }
   render() {

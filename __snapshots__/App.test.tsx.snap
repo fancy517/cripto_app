@@ -319,13 +319,7 @@ exports[`<App /> has 1 child 1`] = `
                           {
                             "paddingHorizontal": 0,
                           },
-                          [
-                            false,
-                            {
-                              "alignItems": "center",
-                            },
-                            undefined,
-                          ],
+                          undefined,
                         ]
                       }
                       testID="appbar-content"

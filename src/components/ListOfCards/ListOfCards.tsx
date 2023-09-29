@@ -1,22 +1,60 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import React, { Component } from "react";
 import TokenCard from "../TokenCard";
-import Api from "../../api";
+import Api from "../../api/Api";
+import Token from "../../types/Token";
 
-export class ListOfCards extends Component {
-  state = {
+type listOfCardsProps = {
+  queryList: number[];
+};
+
+type listOfCardsState = {
+  currentPage: number;
+  criptoApi: Api;
+  queryTimeOut: number;
+  listOfTokens: Token[];
+};
+
+export class ListOfCards extends Component<listOfCardsProps> {
+  constructor(props: listOfCardsProps) {
+    super(props);
+    this.queryTimeout = this.queryTimeout.bind(this);
+  }
+
+  state: listOfCardsState = {
     currentPage: 0,
-    listOfTokens: [],
+    queryTimeOut: 0,
     criptoApi: new Api(),
+    listOfTokens: [],
   };
 
   componentDidMount(): void {
-    (async () => {
-      const listOfTokens = await this.state.criptoApi.getAllCriptoTickets(
-        this.state.currentPage
-      );
-      this.setState({ ...this.state, listOfTokens });
-    })();
+    this.initTokens();
+  }
+
+  componentDidUpdate(
+    prevProps: Readonly<listOfCardsProps>,
+    prevState: Readonly<listOfCardsState>,
+    snapshot?: any
+  ): void {
+    if (
+      this.props.queryList.length > 0 &&
+      this.props.queryList !== prevProps.queryList
+    ) {
+      this.queryTimeout();
+    } else if (
+      this.props.queryList.length === 0 &&
+      this.props.queryList !== prevProps.queryList
+    ) {
+      console.log("Entered main menu");
+      this.initTokens();
+      this.setState({ ...this.state, currentPage: 0 });
+    }
+  }
+
+  async initTokens(): Promise<void> {
+    const listOfTokens = await this.state.criptoApi.getAllCriptoTickets(0);
+    this.setState({ ...this.state, listOfTokens });
   }
 
   async chargeMoreTokens(): Promise<void> {
@@ -29,12 +67,50 @@ export class ListOfCards extends Component {
       currentPage: this.state.currentPage + 1,
     });
   }
+
+  async makeSearchWithQuery(): Promise<void> {
+    console.log("queryList", this.props.queryList.slice(0, 10).join(","));
+    const queryTokens = await this.state.criptoApi.getCriptoDetails(
+      this.props.queryList.slice(0, 10).join(",")
+    );
+    this.setState({
+      ...this.state,
+      listOfTokens: queryTokens,
+      currentPage: 0,
+    });
+  }
+
+  queryTimeout() {
+    if (this.state.queryTimeOut !== 0) {
+      console.log("entered in clean timeout", this.state.queryTimeOut);
+
+      clearTimeout(this.state.queryTimeOut);
+    }
+    const tempTimeOut = setTimeout(() => this.makeSearchWithQuery(), 1000);
+    console.log(
+      "currentPage",
+      this.state.currentPage,
+      "queryTimeOut",
+      this.state.queryTimeOut,
+      "listOfTokens",
+      this.state.listOfTokens.length
+    );
+
+    this.setState({
+      ...this.state,
+      queryTimeOut: tempTimeOut,
+    });
+  }
   render() {
     return (
       <FlatList
         style={style.container}
         data={this.state.listOfTokens}
-        onEndReached={() => this.chargeMoreTokens()}
+        onEndReached={
+          this.props.queryList.length > 0
+            ? () => {}
+            : () => this.chargeMoreTokens()
+        }
         onEndReachedThreshold={0.1}
         renderItem={({ item, index }) => <TokenCard token={item} key={index} />}
       />
