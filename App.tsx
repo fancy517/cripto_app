@@ -22,7 +22,7 @@ function App() {
         </RootStack.Navigator>
       </PaperProvider>
     </NavigationContainer>
-  );
+  ) as React.ReactNode;
 }
 
 export default App;

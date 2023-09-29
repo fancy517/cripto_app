@@ -49,7 +49,7 @@ export default class ListOfTokens extends Component<props> {
           <ListOfCards queryList={this.state.queryList} />
         </View>
       </>
-    );
+    ) as React.ReactNode;
   }
 }
 

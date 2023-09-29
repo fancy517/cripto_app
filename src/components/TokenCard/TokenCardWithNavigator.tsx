@@ -1,5 +1,4 @@
 import TokenCard from "./TokenCard";
-import React from "react";
 import Token from "../../types/Token";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamsList } from "../../types/StackParams";
