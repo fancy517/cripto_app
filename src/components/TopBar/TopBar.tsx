@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Platform } from "react-native";
 import { Searchbar } from "react-native-paper";
-import Api from "../../api/Api";
-import SearchTokenItem from "../../types/SearchTokenItem";
 
 type topBarProps = {
   query?: string;

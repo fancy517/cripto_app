@@ -17,7 +17,6 @@ export default class ListOfTokens extends Component<props> {
   };
 
   async setQuery(newQuery: string) {
-    console.log("--", newQuery, "--");
     this.setState({
       ...this.state,
       query: newQuery,
@@ -38,8 +37,6 @@ export default class ListOfTokens extends Component<props> {
         });
       });
       const listOfRanks = filteredTokens.map((tiket) => tiket.rank);
-      console.log(listOfRanks.length);
-
       this.setState({ ...this.state, queryList: listOfRanks });
     }, 1000);
   };

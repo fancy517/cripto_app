@@ -46,7 +46,6 @@ export class ListOfCards extends Component<listOfCardsProps> {
       this.props.queryList.length === 0 &&
       this.props.queryList !== prevProps.queryList
     ) {
-      console.log("Entered main menu");
       this.initTokens();
       this.setState({ ...this.state, currentPage: 0 });
     }
@@ -69,7 +68,6 @@ export class ListOfCards extends Component<listOfCardsProps> {
   }
 
   async makeSearchWithQuery(): Promise<void> {
-    console.log("queryList", this.props.queryList.slice(0, 10).join(","));
     const queryTokens = await this.state.criptoApi.getCriptoDetails(
       this.props.queryList.slice(0, 10).join(",")
     );
@@ -82,20 +80,9 @@ export class ListOfCards extends Component<listOfCardsProps> {
 
   queryTimeout() {
     if (this.state.queryTimeOut !== 0) {
-      console.log("entered in clean timeout", this.state.queryTimeOut);
-
       clearTimeout(this.state.queryTimeOut);
     }
     const tempTimeOut = setTimeout(() => this.makeSearchWithQuery(), 1000);
-    console.log(
-      "currentPage",
-      this.state.currentPage,
-      "queryTimeOut",
-      this.state.queryTimeOut,
-      "listOfTokens",
-      this.state.listOfTokens.length
-    );
-
     this.setState({
       ...this.state,
       queryTimeOut: tempTimeOut,
