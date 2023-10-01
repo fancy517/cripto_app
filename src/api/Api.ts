@@ -40,9 +40,7 @@ export default class Api {
 
   async getCriptoSearch(): Promise<SearchTokenItem[]> {
     try {
-      const dataToFilter = await fetch(
-        "https://www.coinlore.com/data/coin_search.json"
-      );
+      const dataToFilter = await fetch(allUrls.crypto_search_url);
       const dataParsed = await dataToFilter.json();
       return dataParsed;
     } catch (err) {

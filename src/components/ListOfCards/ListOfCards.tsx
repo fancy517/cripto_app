@@ -1,5 +1,5 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import React, { Component } from "react";
+import { FlatList, StyleSheet } from "react-native";
+import { Component } from "react";
 import TokenCard from "../TokenCard";
 import Api from "../../api/Api";
 import Token from "../../types/Token";
@@ -11,7 +11,7 @@ type listOfCardsProps = {
 type listOfCardsState = {
   currentPage: number;
   criptoApi: Api;
-  queryTimeOut: number;
+  queryTimeOutId: number;
   listOfTokens: Token[];
 };
 
@@ -23,7 +23,7 @@ export class ListOfCards extends Component<listOfCardsProps> {
 
   state: listOfCardsState = {
     currentPage: 0,
-    queryTimeOut: 0,
+    queryTimeOutId: 0,
     criptoApi: new Api(),
     listOfTokens: [],
   };
@@ -79,8 +79,8 @@ export class ListOfCards extends Component<listOfCardsProps> {
   }
 
   queryTimeout() {
-    if (this.state.queryTimeOut !== 0) {
-      clearTimeout(this.state.queryTimeOut);
+    if (this.state.queryTimeOutId !== 0) {
+      clearTimeout(this.state.queryTimeOutId);
     }
     const tempTimeOut = setTimeout(() => this.makeSearchWithQuery(), 1000);
     this.setState({
